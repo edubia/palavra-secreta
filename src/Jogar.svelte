@@ -222,6 +222,11 @@
 			if (tabela[linha].join("") == palavraSorteada) {
 			//	Troca do valor da variável para informar a vitória
 				msg = "Você acertou!";
+					/*	Se o valor de linha ultrapassar 4, ou seja, se as chances acabarem,
+						o usuário perde o jogo	*/
+					if (linha > 4) {
+						msg = "Você perdeu!";
+					}
 			}
 
 		//	A próxima linha da tabela é quem será utilizada
@@ -230,12 +235,6 @@
 		/*	O valor de celula precisa voltar a ser 0 para que os caracteres sejam inseridos
 			na posição correta na nova linha	*/
 			celula = 0
-		
-		/*	Se o valor de linha ultrapassar 4, ou seja, se as chances acabarem,
-			o usuário perde o jogo	*/
-			if (linha > 4) {
-				msg = "Você perdeu!";
-			}
 		}
 
 	//	Se todas as palavras forem utilizadas, o jogo é reiniciado
